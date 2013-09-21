@@ -13,9 +13,7 @@ function GetCount(){
 	dateNow.setMinutes(dateNow.getMinutes() + 30);
 
         amount = dateFuture.getTime() - dateNow.getTime();   //calc milliseconds between dates
-	out = dateNow.getMonth()+"/"+dateNow.getDate()+"/"+dateNow.getFullYear()+" "+dateNow.getHours()+":"+dateNow.getMinutes();
-        document.getElementById('countbox2').innerHTML=out;
-	delete dateNow;
+	//delete dateNow;
 
         // time is already past
         if(amount < 0){
@@ -55,6 +53,5 @@ window.onload=function(){GetCount();}//call when everything has loaded
 //-->
 </script>
 <div id="countbox" style="margin-top: 34px; margin-left:3px; font-size: 24px"></div>
-IST:<div id="countbox2" style="margin-top: 34px; margin-left:3px; font-size: 20px"></div>
 
 
