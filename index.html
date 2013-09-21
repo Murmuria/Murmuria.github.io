@@ -14,7 +14,7 @@ function GetCount(){
 	dateNow.setMinutes(dateNow.getMinutes() + 30);
 
         amount = dateFuture.getTime() - dateNow.getTime();   //calc milliseconds between dates
-        delete dateNow;
+        //delete dateNow;
 
         // time is already past
         if(amount < 0){
@@ -45,6 +45,30 @@ function GetCount(){
 
                 setTimeout("GetCount()", 1000);
         }
+
+                days=0;hours=0;mins=0;secs=0;out="";
+
+                amount = Math.floor(dateNow/1000);//kill the "milliseconds" so just secs
+
+                days=Math.floor(amount/86400);//days
+                amount=amount%86400;
+
+                hours=Math.floor(amount/3600);//hours
+                amount=amount%3600;
+
+                mins=Math.floor(amount/60);//minutes
+                amount=amount%60;
+
+                secs=Math.floor(amount);//seconds
+
+                if(days != 0){out += days +" day"+((days!=1)?"s":"")+", ";}
+                if(days != 0 || hours != 0){out += hours +" hour"+((hours!=1)?"s":"")+", ";}
+                if(days != 0 || hours != 0 || mins != 0){out += mins +" minute"+((mins!=1)?"s":"")+", ";}
+                out += secs +" seconds";
+                document.getElementById('countbox2').innerHTML=out;
+
+                setTimeout("GetCount()", 1000);
+
 }
 
 window.onload=function(){GetCount();}//call when everything has loaded
@@ -52,5 +76,6 @@ window.onload=function(){GetCount();}//call when everything has loaded
 //-->
 </script>
 <div id="countbox" style="margin-top: 34px; margin-left:3px; font-size: 24px"></div>
+<div id="countbox2" style="margin-top: 34px; margin-left:3px; font-size: 20px"></div>
 
 
