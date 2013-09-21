@@ -14,7 +14,7 @@ function GetCount(){
 	dateNow.setMinutes(dateNow.getMinutes() + 30);
 
         amount = dateFuture.getTime() - dateNow.getTime();   //calc milliseconds between dates
-	out = dateNow.getMonth()+"/"+dateNow.getDate()+"/"+dateNow.getYear()+"/"+dateNow.getHours()+"/"+dateNow.getMinutes();
+	out = dateNow.getMonth()+"/"+dateNow.getDate()+"/"+dateNow.getFullYear()+" "+dateNow.getHours()+":"+dateNow.getMinutes();
         document.getElementById('countbox2').innerHTML=out;
 	delete dateNow;
 
