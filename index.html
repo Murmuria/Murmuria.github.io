@@ -6,7 +6,10 @@ dateFuture = new Date(2013,10,27,9,00,00,00);
 
 function GetCount(){
 
-        dateNow = new Date(date);             //grab current date
+        UTC = new Date();             //grab current date
+	UTC = UTC.getTime();
+
+	dateNow = new Date(UTC);
 	dateNow.setHours(dateNow.getHours() + 5);
 	dateNow.setMinutes(dateNow.getMinutes() + 30);
 
